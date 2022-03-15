@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+owner=containers
+repo=skopeo
+limit=100
+
+curl -sH 'Accept: application/vnd.github.v3+json' \
+  https://api.github.com/repos/$owner/$repo/releases?per_page=$limit \
+  | grep '"tag_name"' | sed -E 's/.+v([^"]+).+/\1/' | tac
