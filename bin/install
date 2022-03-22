@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+# Compilation requires working within GOPATH.
+# See: https://github.com/containers/skopeo/blob/main/install.md#building-without-a-container
+godir="$GOPATH/src/github.com/containers"
+mkdir -p "$godir"
+ln -sf "$ASDF_DOWNLOAD_PATH" "$godir/skopeo"
+cd "$godir/skopeo"
+
+DISABLE_DOCS=1 make bin/skopeo
+
+mkdir -p "$ASDF_INSTALL_PATH/bin"
+mv bin/skopeo "$ASDF_INSTALL_PATH/bin"
