@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+if [[ $ASDF_INSTALL_TYPE != 'version' ]]; then
+  echo "Unsupported install type: $ASDF_INSTALL_TYPE"
+  echo "Install type must be 'version'"
+  exit 1
+fi
+
+filename="v$ASDF_INSTALL_VERSION.tar.gz"
+url="https://github.com/containers/skopeo/archive/refs/tags/$filename"
+dl="$ASDF_DOWNLOAD_PATH/$filename"
+
+curl "$url" -Lo "$dl"
+tar -xf "$dl" -C "$ASDF_DOWNLOAD_PATH" --strip 1
+rm "$dl"
