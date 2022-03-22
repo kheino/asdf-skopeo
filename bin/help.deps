@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cat <<-EOM
+	curl
 	golang >=1.12
 
 	Additional dependencies:
