@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cat <<-EOM
+	golang >=1.12
+
+	Additional dependencies:
+
+	  # Ubuntu (libbtrfs-dev requires Ubuntu 18.10 and above):
+	  sudo apt install libgpgme-dev libassuan-dev libbtrfs-dev libdevmapper-dev pkg-config
+
+	  # macOS:
+	  brew install gpgme
+EOM

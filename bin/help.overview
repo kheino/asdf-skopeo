@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cat <<-EOM
+	Plugin to manage Skopeo, a command line utility that performs
+	various operations on container images and image repositories.
+EOM

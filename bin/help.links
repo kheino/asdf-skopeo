@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cat <<-EOM
+	Skopeo: https://github.com/containers/skopeo
+EOM
