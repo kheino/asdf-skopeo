@@ -4,7 +4,8 @@ set -eo pipefail
 
 # Compilation requires working within GOPATH.
 # See: https://github.com/containers/skopeo/blob/main/install.md#building-without-a-container
-godir="$GOPATH/src/github.com/containers"
+gopath="$(go env GOPATH)"
+godir="$gopath/src/github.com/containers"
 mkdir -p "$godir"
 ln -sf "$ASDF_DOWNLOAD_PATH" "$godir/skopeo"
 cd "$godir/skopeo"
