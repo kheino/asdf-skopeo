@@ -2,8 +2,6 @@
 
 Plugin to manage [Skopeo](https://github.com/containers/skopeo), a command line utility that performs various operations on container images and image repositories.
 
-:rotating_light: **NOTE:** Commits to this repository are [automatically mirrored](https://docs.gitlab.com/ee/user/project/repository/mirror/) to a **PUBLIC** repository. This is to allow `asdf` to access and add the plugin. :rotating_light:
-
 For details on `asdf` plugin development, see the `asdf` documentation on how to [create a plugin](https://asdf-vm.com/plugins/create.html).
 
 ## How to install
@@ -32,7 +30,7 @@ If running macOS, install additional dependencies:
 
 ### Adding the plugin
 
-To make the plugin available for `asdf`, it is published through a [public mirror repository](https://github.com/kheino/asdf-skopeo). Add `asdf-skopeo` by pointing to the mirror:
+Add `asdf-skopeo` plugin by pointing to this repository:
 
 ```shell
 > asdf plugin add skopeo https://github.com/kheino/asdf-skopeo
